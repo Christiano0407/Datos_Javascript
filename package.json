@@ -1,0 +1,23 @@
+{
+  "name": "datos_ja",
+  "version": "1.0.0",
+  "description": "datos con javascript",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christiano0407/Datos_Javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "data"
+  ],
+  "author": "Chris 04",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Christiano0407/Datos_Javascript/issues"
+  },
+  "homepage": "https://github.com/Christiano0407/Datos_Javascript#readme"
+}
