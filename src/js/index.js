@@ -75,3 +75,8 @@ console.log(oneArray.shift());
 console.log(oneArray); 
 console.log(oneArray.unshift("Samantha"));
 console.log(oneArray); 
+
+//Strings(texto) = Te lo va a gurdar comoun array. 
+
+//Hash Tables = objetos (javascript). //Key and Value. (Utiliza métodos como: agregar, buscar, quitar elementos)=
+// = Hash function. 

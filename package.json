@@ -4,7 +4,8 @@
   "description": "datos con javascript",
   "main": "src/js/index.js",
   "scripts": {
-    "javascript": "node src/js/index.js"
+    "javascript": "node src/js/index.js",
+    "javascript:table": "node src/js/hashTable.js"
   },
   "repository": {
     "type": "git",
