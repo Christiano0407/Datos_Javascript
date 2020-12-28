@@ -20,6 +20,9 @@ class HashTable {
   }
   
   const myHashTable = new HashTable(50);
+  console.log(myHashTable);
 //charCodeat = número aleatorio entre 0 y 1; 
-
 myHashTable.set("Pammela", 1992); 
+myHashTable.set("Luisa", 1991); 
+console.log(myHashTable.set("Alejandra", 2000)); 
+console.log(myHashTable.set("Alma", 1996)); 
