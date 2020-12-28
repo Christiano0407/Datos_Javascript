@@ -1,0 +1,1 @@
+//Linked List: Son un conjunto de nodos ordenados que contienen los valores (numbers, string, boolean...)

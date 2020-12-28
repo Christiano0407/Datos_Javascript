@@ -29,6 +29,12 @@ class HashTable {
         }
         return undefined; 
     }
+    getKeys() {
+      return this.data.reduce((instance, value) => {
+        const keys = value.map(([key]) => key);
+        return instance.concat(keys)
+      }, []);
+    }
 
   }
   
@@ -42,3 +48,5 @@ console.log(myHashTable.set("Alma", 1996));
 console.log(myHashTable.get("Pammela"));
 console.log(myHashTable.get("Luisa")); 
 console.log(myHashTable.get("Alejandra")); 
+console.log(myHashTable.getKeys()); 
+
