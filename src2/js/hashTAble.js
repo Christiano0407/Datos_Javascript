@@ -28,7 +28,16 @@ class HashTable {
     }
     //Búsqueda o obtener:
     get(key){
-
+    const address = this.hashMethod(key); 
+    const currentBucket = this.data[address]; 
+    if(currentBucket){
+        for(let i = 0; i < currentBucket.length; i++){
+            if(currentBucket[i][0] === key){
+                return currentBucket[i][1]; 
+            }
+         }
+      }
+    return undefined; 
     }
 }
 //Instancias
@@ -37,4 +46,5 @@ console.log(myHashTable);
 console.log(myHashTable.set("Pammela",1992));
 console.log(myHashTable.set("Luisa",1991));  
 console.log(myHashTable.set("Mauricio",1990));
+console.log(myHashTable.get("Pammela")); 
 console.log(myHashTable); 
