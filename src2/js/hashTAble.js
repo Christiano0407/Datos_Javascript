@@ -47,8 +47,9 @@ class HashTable {
     }
     //map = crea un nuevo array.
     //reduce(ejecuta una función reductora sobre cada elemento de un array)
-
-    remove(key){
+    
+    //Delete 1)
+   /*  remove(key){
         const address = this.hashMethod(key); 
         const currentBucket = this.data[address]
          if(currentBucket){
@@ -61,6 +62,22 @@ class HashTable {
              }
          }
          return undefined
+    } */
+    //2)
+    remove(key) {
+        const address = this.hashMethod(key)
+        const currentBucket = this.data[address]
+        if(currentBucket) {
+            for(let i = 0; i < currentBucket.length; i++) {
+                if(currentBucket[i]) {
+                    const element = currentBucket[i]
+                    delete currentBucket[i]
+                    return element
+                }
+            }
+        }
+        delete this.data[address]
+        return undefined
     }
 }
 //Instancias
@@ -72,5 +89,6 @@ console.log(myHashTable.set("Mauricio",1990));
 console.log(myHashTable.set("Ivan", 1989)); 
 console.log(myHashTable.get("Pammela")); 
 console.log(myHashTable.getKeys()); 
-console.log(myHashTable.remove("Ivan")); 
+console.log(myHashTable.remove("Ivan"));
+console.log(myHashTable.remove("Luisa")); 
 console.log(myHashTable.getKeys()); 
