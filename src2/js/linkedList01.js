@@ -80,6 +80,30 @@ class MySinglyList {
         return currentNode; 
     }
 
+    delete(index){
+    if(index <= 0) return this.shift(); 
+    if(index >= this.length)return this.pop(); 
+    const prevDeleteNode = this.getTheIndex(index - 1); 
+    prevDeleteNode.next = prevDeleteNode.next.next; 
+    this.length--; 
+    return this; 
+    }
+
+    shift(){
+    const secondNode = this.head.next; 
+    this.head = secondNode; 
+    this.length--; 
+
+    return this; 
+    }
+    pop(){
+    const prevLastNode = this.getTheIndex(this.length - 2); 
+    this.tail = prevLastNode; 
+    prevLastNode.next = null; 
+    this.length--; 
+    return this;  
+    }
+
 }
 
 let myLinkedList = new MySinglyList(1); 
@@ -89,3 +113,5 @@ console.log(myLinkedList.append(3));
 console.log(myLinkedList.prepend(0)); 
 console.log(myLinkedList.insert(2, 5)); 
 console.log(myLinkedList.insert(0, 1)); 
+console.log(myLinkedList.delete(3)); 
+console.log(myLinkedList); 
