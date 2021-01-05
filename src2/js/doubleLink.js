@@ -35,9 +35,21 @@ class myDoublyLinkedList {
     return this; 
     }
 
+    prepend(value){
+    const newNode = new Node(value)
+
+    newNode.next = this.head; 
+    this.head = newNode; 
+    this.head.prev = newNode; 
+    this.length += 1; 
+
+    return this; 
+    }
+
 }
 
 let Doubly = new myDoublyLinkedList(1); 
 console.log(Doubly); 
 console.log(Doubly.append(2));
 console.log(Doubly.append(3));  
+console.log(Doubly.prepend(0)); 
