@@ -19,40 +19,47 @@ class Queue {
         this.length = 0; 
     }
 
-    pekk(){
-        return this.bottom; 
+    peek(){
+        return this.top; 
     }
 
    enQueue(value){
    const newNode = new Node(value);
    
    if(this.length === 0){
-       this.bottom = newNode;
        this.top = newNode; 
-
-       this.length++; 
-       return this; 
+       this.bottom = newNode;
+   }else {
+       this.bottom.next = newNode; 
+       this.bottom = newNode
    }
+   this.length++; 
+   return this; 
    }
 
    getBottom(){
     return this.top; 
 }
  
- deQueue(){
-  if(this.length === 0){
-      return "Nothing Dates"; 
+deQueue(value) {
+    //const newNode = new Node(value)
+
+    if (this.length === 0) {
+      console.error("There is no nodes in the Queue.");
+      return;
+    }
+    
+    const firstNode = this.top;
+    if (this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+    } else {
+      this.top = this.top.next;
+    }
+    
+    this.length--;
+    return firstNode
   }
-  if(this.length === 1){
-      this.top = null; 
-      this.bottom =null;
-      this.length++;
-      return this; 
-  }
-  this.bottom = this.bottom.next; 
-  this.length--; 
-  return this; 
- }
 
  push(value){
      const newNode = new Node(value); 
@@ -76,5 +83,9 @@ const myQueue = new Queue();
 console.log(myQueue);
 //console.log(myQueue.push("PlayeraStarWars"))
 console.log(myQueue.enQueue("PlayeraMarvel"));
-//console.log(myQueue.deQueue());
+console.log(myQueue.enQueue("PlayeraStarWars"));
+console.log(myQueue.enQueue("PlayeraDisney"));
+console.log(myQueue.peek()); 
+console.log(myQueue.deQueue());
+console.log(myQueue);
 
