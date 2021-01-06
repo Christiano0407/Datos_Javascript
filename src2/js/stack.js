@@ -24,6 +24,10 @@ class Stack {
     peek(){
     return this.top; 
     }
+    //Then thre is no element in the stack:
+    isEmpty(){
+        return this.top === 0; 
+    }
     //Recibe el valor a añadir al stack.
     push(value){
         const newNode = new Node (value); 
@@ -52,6 +56,7 @@ class Stack {
 const myStack = new Stack(); 
 
 console.log(myStack); 
+console.log(myStack.isEmpty());
 console.log(myStack.push("Playera1"));
 console.log(myStack.push("Playera2")); 
 console.log(myStack.push("PlayeraStarWars"));
