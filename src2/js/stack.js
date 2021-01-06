@@ -1,3 +1,12 @@
+/* Operations that we are going to implement:
+Push → Add an element to the stack.
+Pop → Delete an element from the stack.
+Peek → Get the top element of the stack.
+Length → Return the length of the stack.
+Search → Search for the element in the stack.
+IsEmpty → Check if the stack is empty.
+Print → Print the elements of the stack. */
+
 class Node {
     constructor(value){
      this.value = value; 
@@ -48,3 +57,4 @@ console.log(myStack.push("Playera2"));
 console.log(myStack.push("PlayeraStarWars"));
 console.log(myStack.push("GorraMarvel"));
 console.log(myStack.pop()); 
+console.log(myStack.peek()); 
