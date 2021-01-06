@@ -44,12 +44,41 @@ class DoublyLinkedList{
         this.length--; 
         return popped; 
     }
+    unshift(value){
+        const newNode = new Node(value); 
+        
+        if(!this.head){
+        this.head = newNode; 
+        this.tail = newNode; 
+        }else {
+         newNode.next = this.head; 
+         this.head = newNode; 
+        }
+        this.length++; 
+        return this; 
+    }
+    shift(){
+    if(!this.head)return false; 
+    const shiftedNode = this.head; 
+    const newHead = this.head.next; 
+
+    if(!newHead){
+        this.tail = newHead; 
+    }
+    this.head = newHead; 
+    this.length++; 
+    return shiftedNode; 
+    }
+
 }
 
 const myLinked = new DoublyLinkedList(); 
 console.log(myLinked); 
 console.log(myLinked.push("Manzana"));
+console.log(myLinked.push("Piña")); 
 console.log(myLinked.push("Naranja"));
 console.log(myLinked.pop("Naranja"));
+console.log(myLinked.unshift("Melón"));
+console.log(myLinked.unshift("Papaya")); 
+console.log(myLinked.shift(1)); 
 console.log(myLinked); 
-  
