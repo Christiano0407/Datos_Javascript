@@ -37,8 +37,9 @@ class searchTree{
     }
 
     search(value){
-    if(!this.root){
-        throw new Error("Not root and value"); 
+    if(this.root === null){
+        console.warn("Not root and value");
+        return null;
     }
     let currentNode = this.root; 
     if(currentNode.value === value){
